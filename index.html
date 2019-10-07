@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset='utf-8' />
+    <title>ClimatAI Test Map</title>
+    <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
+    <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v1.3.2/mapbox-gl.js'></script>
+    <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v1.3.2/mapbox-gl.css' rel='stylesheet' />
+    <link href='tmap.css' rel='stylesheet' />
+  </head>
+  <body>
+    <div id='map'></div>
+      <div id='menu'>
+        <div id='title'>ClimateAI Test Map</div>
+        <input id='all_fields' type='radio' name='rtoggle' value='all_fields' checked='checked'>
+          <label for='all_fields'>all fields</label>
+        <input id='field_1' type='radio' name='rtoggle' value='field_1'>
+          <label for='field_1'>field_1</label>
+        <input id='field_2' type='radio' name='rtoggle' value='field_2'>
+          <label for='field_2'>field_2</label>
+        <input id='field_3' type='radio' name='rtoggle' value='field_3'>
+          <label for='field_3'>field_3</label>
+        <input id='field_4' type='radio' name='rtoggle' value='field_4'>
+          <label for='field_4'>field_4</label>
+    </div>
+    <div id="legend-all_fields" class="ui-widget bottom-left bottom left positioned positioned-in-map ui-panel" style="margin: 0px; background-color: black; padding: 8px 15px; z-index: 0; position: absolute; bottom: 26px; left: 0px;">
+      <div class="ui-layout layout-flow layout-flow-vertical">
+        <div class="ui-widget ui-label" style="margin: 0px 0px 4px; background-color: black; font-weight: bold; font-size: 16px; padding: 0px;"><span class="label">Fields</span></div>
+        <div class="ui-widget ui-panel" style="margin: 0px; background-color: black;">
+          <div class="ui-layout layout-flow layout-flow-horizontal">
+            <div class="ui-widget ui-label" style="margin: 0px 0px 4px; background-color: #4ad0a6; padding: 8px;"><span class="label"></span></div>
+            <div class="ui-widget ui-label" style="margin: 0px 0px 4px 6px; background-color: black;"><span class="label">field_1</span></div>
+          </div>
+        </div>
+        <div class="ui-widget ui-panel" style="margin: 0px; background-color: black;">
+          <div class="ui-layout layout-flow layout-flow-horizontal">
+            <div class="ui-widget ui-label" style="margin: 0px 0px 4px; background-color: #de7fd5; padding: 8px;"><span class="label"></span></div>
+            <div class="ui-widget ui-label" style="margin: 0px 0px 4px 6px; background-color: black;"><span class="label">field_2</span></div>
+          </div>
+        </div>
+        <div class="ui-widget ui-panel" style="margin: 0px; background-color: black;">
+          <div class="ui-layout layout-flow layout-flow-horizontal">
+            <div class="ui-widget ui-label" style="margin: 0px 0px 4px; background-color: #b0ea72; padding: 8px;"><span class="label"></span></div>
+            <div class="ui-widget ui-label" style="margin: 0px 0px 4px 6px; background-color: black;"><span class="label">field_3</span></div>
+          </div>
+        </div>
+        <div class="ui-widget ui-panel" style="margin: 0px; background-color: black;">
+          <div class="ui-layout layout-flow layout-flow-horizontal">
+            <div class="ui-widget ui-label" style="margin: 0px 0px 4px; background-color: #ef966f; padding: 8px;"><span class="label"></span></div>
+            <div class="ui-widget ui-label" style="margin: 0px 0px 4px 6px; background-color: black;"><span class="label">field_4</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="legend-field" class="ui-widget bottom-left bottom left positioned positioned-in-map ui-panel" style="margin: 0px; background-color: black; padding: 8px 15px; z-index: 0; position: absolute; bottom: 26px; left: 0px; display: none">
+      <div class="ui-layout layout-flow layout-flow-vertical">
+        <div class="ui-widget ui-label" style="margin: 0px 0px 4px; background-color: black; font-weight: bold; font-size: 16px; padding: 0px;"><span class="label">Field</span></div>
+        <div class="ui-widget ui-panel" style="margin: 0px; background-color: black;">
+          <div class="ui-layout layout-flow layout-flow-horizontal">
+            <div class="ui-widget ui-label" style="margin: 0px 0px 4px; background-color: #2c115f; padding: 8px;"><span class="label"></span></div>
+            <div class="ui-widget ui-label" style="margin: 0px 0px 4px 6px; background-color: black;"><span class="label">0</span></div>
+          </div>
+        </div>
+        <div class="ui-widget ui-panel" style="margin: 0px; background-color: black;">
+          <div class="ui-layout layout-flow layout-flow-horizontal">
+            <div class="ui-widget ui-label" style="margin: 0px 0px 4px; background-color: #721f81; padding: 8px;"><span class="label"></span></div>
+            <div class="ui-widget ui-label" style="margin: 0px 0px 4px 6px; background-color: black;"><span class="label">0.1</span></div>
+          </div>
+        </div>
+        <div class="ui-widget ui-panel" style="margin: 0px; background-color: black;">
+          <div class="ui-layout layout-flow layout-flow-horizontal">
+            <div class="ui-widget ui-label" style="margin: 0px 0px 4px; background-color: #b73779; padding: 8px;"><span class="label"></span></div>
+            <div class="ui-widget ui-label" style="margin: 0px 0px 4px 6px; background-color: black;"><span class="label">0.2</span></div>
+          </div>
+        </div>
+        <div class="ui-widget ui-panel" style="margin: 0px; background-color: black;">
+          <div class="ui-layout layout-flow layout-flow-horizontal">
+            <div class="ui-widget ui-label" style="margin: 0px 0px 4px; background-color: #f1605d; padding: 8px;"><span class="label"></span></div>
+            <div class="ui-widget ui-label" style="margin: 0px 0px 4px 6px; background-color: black;"><span class="label">0.3</span></div>
+          </div>
+        </div>
+        <div class="ui-widget ui-panel" style="margin: 0px; background-color: black;">
+          <div class="ui-layout layout-flow layout-flow-horizontal">
+            <div class="ui-widget ui-label" style="margin: 0px 0px 4px; background-color: #feb078; padding: 8px;"><span class="label"></span></div>
+            <div class="ui-widget ui-label" style="margin: 0px 0px 4px 6px; background-color: black;"><span class="label">0.4</span></div>
+          </div>
+        </div>
+        <div class="ui-widget ui-panel" style="margin: 0px; background-color: black;">
+          <div class="ui-layout layout-flow layout-flow-horizontal">
+            <div class="ui-widget ui-label" style="margin: 0px 0px 4px; background-color: #fcfdbf; padding: 8px;"><span class="label"></span></div>
+            <div class="ui-widget ui-label" style="margin: 0px 0px 4px 6px; background-color: black;"><span class="label">0.5</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src='csv2geojson.js'></script>
+    <script src='data.js'></script>
+    <script src='tmap_style.js'></script>
+    <script src='tmap.js'></script>
+  </body>
+</html>

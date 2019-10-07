@@ -1,0 +1,105 @@
+body {
+  margin:0;
+  padding:0;
+  font-family: 'Open Sans', sans-serif;
+  color: #aaa;
+}
+#map { position:absolute; top:0; bottom:0; width:100%; }
+#menu {
+  position: absolute;
+  background: #000;
+  padding: 16px;
+}
+#title {
+  font-size: 20px;
+  font-weight: 700;
+  padding: 4px 0 8px 0;
+}
+
+.ui-widget {
+  overflow: hidden;
+  cursor: default;
+  box-sizing: border-box
+}
+
+.ui-label {
+  display: flex;
+  align-items: center
+}
+
+.ui-label span.label {
+  width: 100%
+}
+
+.ui-panel {
+  margin: 0;
+  position: relative;
+  align-self: stretch;
+  overflow: auto;
+  display: flex;
+  flex-direction: column
+}
+
+.ui-panel.stretch-vertical>.ui-layout, .ui-panel.custom-height>.ui-layout {
+  flex: 1 0 0%
+}
+
+.ui-panel.stretch-horizontal>.ui-layout, .ui-panel.custom-width>.ui-layout {
+  align-self: stretch
+}
+
+.ui-panel>.layout-flow-horizontal {
+  min-height: 0
+}
+.layout-flow {
+  display: flex;
+  flex-wrap: nowrap
+}
+
+.layout-flow.layout-flow-wrap {
+  flex-wrap: wrap
+}
+
+.layout-flow-horizontal {
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start
+}
+
+.layout-flow-horizontal>.ui-widget {
+  flex: 0 0 auto
+}
+
+.layout-flow-horizontal>.ui-widget.stretch-horizontal {
+  flex: 1 0 0%
+}
+
+.layout-flow-horizontal>.ui-widget.stretch-vertical {
+  align-self: stretch
+}
+
+.layout-flow-horizontal>.ui-widget.custom-width {
+  flex-grow: 0
+}
+
+.layout-flow-vertical {
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start
+}
+
+.layout-flow-vertical>.ui-widget {
+  flex: 0 0 auto
+}
+
+.layout-flow-vertical>.ui-widget.stretch-horizontal {
+  align-self: stretch
+}
+
+.layout-flow-vertical>.ui-widget.stretch-vertical {
+  flex-grow: 1
+}
+
+.layout-flow-vertical>.ui-widget.custom-height {
+  flex-grow: 0
+}
